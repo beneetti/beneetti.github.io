@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benedikt Ettmüller - Creative Portfolio</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: #000;
+        color: #fff;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .intro {
+        margin-bottom: 4rem;
+      }
+
+      .intro h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .intro p {
+        margin-top: 0.75rem;
+        color: #d0d0d0;
+        font-size: 1.05rem;
+      }
+
+      .projects-section {
+        margin-top: 3rem;
+      }
+
+      .projects-section h2 {
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+        color: #b8b8b8;
+      }
+
+      .projects-grid {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        border-top: 1px solid #3a3a3a;
+        padding-top: 2rem;
+      }
+
+      .project-card:last-child {
+        border-bottom: 1px solid #3a3a3a;
+        padding-bottom: 2rem;
+      }
+
+      .project-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .project-header h3 {
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-description {
+        color: #c0c0c0;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .project-link {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 0.15rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-link:hover {
+        opacity: 0.7;
+      }
+
+      .project-link::after {
+        content: " →";
+        margin-left: 0.4rem;
+      }
+
+      .galleries {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .gallery-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gallery-label {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 0.75rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        gap: 0.75rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item {
+        border: 1px solid #3a3a3a;
+        background: #0b0b0b;
+        border-radius: 8px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8f8f8f;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .video-placeholder {
+        aspect-ratio: 16 / 9;
+      }
+
+      .gallery-grid.video {
+        grid-template-columns: 1fr;
+      }
+
+      @media (max-width: 768px) {
+        .galleries {
+          grid-template-columns: 1fr;
+        }
+
+        .project-card {
+          padding-top: 1.5rem;
+        }
+
+        .project-card:last-child {
+          padding-bottom: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <h1>Benedikt Ettmüller</h1>
+        <p>Creative Portfolio — Web Design & Development Projects</p>
+      </section>
+
+      <section class="projects-section">
+        <h2>Selected Works</h2>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Brand Identity System</h3>
+            <p class="project-description">
+              Complete visual identity redesign for a contemporary design studio. Includes logo, typography system, color palette, and application guidelines across digital and print mediums.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Logo 01</div>
+                <div class="gallery-item">Palette</div>
+                <div class="gallery-item">Typography</div>
+                <div class="gallery-item">Guidelines</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Motion Showcase</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>E-Commerce Platform Redesign</h3>
+            <p class="project-description">
+              Modern e-commerce interface redesign focusing on user experience and conversion optimization. Includes product showcase, cart system, and checkout flow.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Homepage</div>
+                <div class="gallery-item">Product</div>
+                <div class="gallery-item">Cart View</div>
+                <div class="gallery-item">Checkout</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">User Flow Demo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Mobile App Interface</h3>
+            <p class="project-description">
+              Minimalist iOS and Android app design for task management. Features intuitive navigation, dark mode support, and seamless cross-platform experience.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">iOS Home</div>
+                <div class="gallery-item">Android Home</div>
+                <div class="gallery-item">Task Detail</div>
+                <div class="gallery-item">Settings</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">App Walkthrough</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Corporate Website</h3>
+            <p class="project-description">
+              Enterprise website for a global consulting firm. Responsive design with case studies, team showcase, and integrated contact management system.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Hero Section</div>
+                <div class="gallery-item">About</div>
+                <div class="gallery-item">Case Study</div>
+                <div class="gallery-item">Team</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Company Overview</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Photography Portfolio</h3>
+            <p class="project-description">
+              Curated photography showcase featuring landscape and portrait work. Custom image gallery with lightbox functionality and optimized loading for high-resolution imagery.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Landscape 01</div>
+                <div class="gallery-item">Portrait 01</div>
+                <div class="gallery-item">Landscape 02</div>
+                <div class="gallery-item">Portrait 02</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Behind the Scenes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>SaaS Dashboard</h3>
+            <p class="project-description">
+              Analytics dashboard for data visualization and management. Includes real-time charts, customizable widgets, and comprehensive reporting features for enterprise users.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Main Dashboard</div>
+                <div class="gallery-item">Analytics</div>
+                <div class="gallery-item">Reports</div>
+                <div class="gallery-item">Settings</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Feature Overview</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Restaurant Branding</h3>
+            <p class="project-description">
+              Complete brand identity and website for a modern restaurant. Menu design, interior photography, reservation system, and social media assets included.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Menu Design</div>
+                <div class="gallery-item">Interior</div>
+                <div class="gallery-item">Plating 01</div>
+                <div class="gallery-item">Plating 02</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Brand Story</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Educational Platform</h3>
+            <p class="project-description">
+              Online learning management system with course creation, student progress tracking, and interactive lesson modules. Built with accessibility standards in mind.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Course List</div>
+                <div class="gallery-item">Lesson View</div>
+                <div class="gallery-item">Progress</div>
+                <div class="gallery-item">Quiz</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Platform Tour</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Fitness Tracking App</h3>
+            <p class="project-description">
+              Health and fitness companion app with workout tracking, nutrition logging, and social challenges. Features wearable device integration and personalized recommendations.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Dashboard</div>
+                <div class="gallery-item">Workout</div>
+                <div class="gallery-item">Progress Chart</div>
+                <div class="gallery-item">Social</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">Quick Start Guide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10 -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Design System Documentation</h3>
+            <p class="project-description">
+              Comprehensive design system and component library documentation for large-scale product teams. Includes component specifications, usage guidelines, and code examples.
+            </p>
+            <a href="#" class="project-link">Visit Project</a>
+          </div>
+          <div class="galleries">
+            <div class="gallery-section">
+              <div class="gallery-label">Images</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">Components</div>
+                <div class="gallery-item">Patterns</div>
+                <div class="gallery-item">Guidelines</div>
+                <div class="gallery-item">Variables</div>
+              </div>
+            </div>
+            <div class="gallery-section">
+              <div class="gallery-label">Videos</div>
+              <div class="gallery-grid video">
+                <div class="gallery-item video-placeholder">System Overview</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </body>
+</html>
