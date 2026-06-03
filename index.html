@@ -164,6 +164,30 @@
         object-fit: cover;
         padding: 0;
         display: block;
+        cursor: pointer;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        z-index: 9999;
+      }
+
+      .lightbox.open {
+        display: flex;
+      }
+
+      .lightbox img {
+        max-width: 95vw;
+        max-height: 95vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
       }
 
       .video-placeholder {
@@ -467,5 +491,38 @@
 
       </section>
     </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <img id="lightboxImage" src="" alt="Expanded view" />
+    </div>
+
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const galleryImages = document.querySelectorAll("img.gallery-image");
+
+      galleryImages.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt || "Expanded view";
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          lightbox.classList.remove("open");
+          lightbox.setAttribute("aria-hidden", "true");
+          lightboxImage.src = "";
+        }
+      });
+    </script>
   </body>
 </html>
